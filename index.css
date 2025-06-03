@@ -255,6 +255,7 @@ input[type="checkbox"]:checked::before {
 
 .slider-wrapper label {
     font-weight: 500;
+    white-space: nowrap;
 }
 
 .slider {
@@ -376,6 +377,7 @@ input[type="range"]::-webkit-slider-thumb {
 
     .slider-wrapper, .checkboxes-wrapper {
       flex-direction: column;
+      margin-top: 0;
     }
 
     .slider {
