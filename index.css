@@ -79,28 +79,34 @@
 body {
     margin: 0;
     padding: 3rem;
-    box-sizing: border-box;
     background-color: var(--color-bg-body);
     color: var(--color-text);
     font-family: var(--font-family);
     position: relative;
     display: flex;
     justify-content: center;
-}
-
-ul, li {
+    align-items: flex-start;
+  }
+  
+  ul, li {
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-
-.container {
+  }
+  
+  .container {
     background-color: var(--color-bg);
-    max-width: 400px;
-    width: calc(100dvw - 4rem);
+    max-width: calc(100dvw - 4rem);
+    min-width: 225px;
+    /* width: 560px; */
+    width: auto;
     padding: 3rem;
     display: flex;
     flex-direction: column;
+    min-height: 0;
+    height: auto;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 #title:not(.green-title) {
@@ -179,21 +185,28 @@ ul, li {
 
 .toggle-settings {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: baseline;
     background: var(--color-bg-btn);
     margin: 8px 0 1rem;
-    padding: .3rem 1.5rem 1.3rem;
+    padding: 1.3rem 1.5rem;
     border-radius: 6px;
 }
 
+.checkboxes-wrapper > ul {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2.5px;
+}
+
 .checkboxes-wrapper > ul > li {
-    margin-top: .4rem;
+    margin: .4rem 0 0 .7rem;
 }
 
 #checkboxes-legend {
     font-weight: 500;
-    margin-bottom: .4rem;
+    margin-top: .4rem;
 }
 
 input[type="checkbox"], input[type="checkbox"] + label {
@@ -210,8 +223,8 @@ input[type="checkbox"] {
     width: 15px;
     height: 15px;
     vertical-align: middle;
-    margin-right: 5px;
     border-radius: 35%;
+    margin-top: 0px;
 }
 
 input[type="checkbox"]:checked {
@@ -229,13 +242,18 @@ input[type="checkbox"]:checked::before {
 }
 
 .slider-wrapper, .checkboxes-wrapper {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: start;
+}
+
+.slider-wrapper {
+  margin-top: 1rem;
 }
 
 .slider-wrapper label {
-    margin-top: 1rem;
     font-weight: 500;
 }
 
@@ -252,7 +270,7 @@ input[type="range"] {
     height: 6px;
     border-radius: 6px;
     accent-color: var(--color-text-green);
-    margin: 1.2rem 1rem .8rem;
+    margin: 1.1rem 1rem .8rem;
     /* outline: none; */
 }
 
@@ -318,38 +336,72 @@ input[type="range"]::-webkit-slider-thumb {
 /* --------- MEDIA QUERIES ---------- */
 
 @media (max-width: 586px) {
+    body {
+      padding: 2rem;
+      min-width: 225px;
+    }
+    
+    .container {
+      text-align: center;
+      align-items: center;
+      width: 100%;
+      max-width: 100%;
+      padding: 2rem 1.5rem;
+    }
+
+    .section-input {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .buttons-wrapper {
+      min-width: 225px;
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .toggle-settings {
+      max-width: 225px;
+      min-width: 225px;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.2rem 0;
+    }
+    
+    .checkboxes-wrapper {
+      margin-top: 1rem;
+    }
+
+    .slider-wrapper, .checkboxes-wrapper {
+      flex-direction: column;
+    }
+
+    .slider {
+      flex-direction: column;
+    }
+
+    #checkboxes-legend {
+      margin-bottom: .4rem;
+    }
+    
+    .checkboxes-wrapper ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      column-gap: 1rem;
+    }
+    
+    .slider-wrapper > label {
+      margin-top: 2rem;
+    }
+
     .passwords-container {
         flex-direction: column;
         align-items: center;
         width: 100%;
-    }
-    
-    .btn-generate {
-        width: 100%;
-    }
-    
-    .container {
-        text-align: center;
-    }
-    
-    .toggle-settings {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .checkboxes-wrapper {
-        margin-top: 1rem;
-    }
-    
-    .checkboxes-wrapper ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        column-gap: 1rem;
-    }
-    
-    .slider-wrapper > label {
-        margin-top: 2rem;
     }
 }
