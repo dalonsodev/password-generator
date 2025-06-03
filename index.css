@@ -1,0 +1,355 @@
+@font-face {
+    font-family: 'Karla';
+    src: url('fonts/Karla-ExtraBold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('fonts/Karla-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('fonts/Karla-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('fonts/Karla-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('fonts/Karla-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('fonts/Karla-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url('fonts/Karla-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter-Light.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --color-bg-body: #1C1C1C;
+    --color-bg: #1F2937;
+    --color-bg-btn: #273549;
+    --color-bg-btn-green: #10B981;
+    --color-text: white;
+    --color-text-btn-alt: #55F991;
+    --color-text-green: #4ADF86;
+    --color-subtitle: #D5D4D8;
+    --color-separator: #2F3E53;
+    --font-family: 'Karla';
+    --font-family-alt: 'Inter';
+}
+
+body {
+    margin: 0;
+    padding: 3rem;
+    box-sizing: border-box;
+    background-color: var(--color-bg-body);
+    color: var(--color-text);
+    font-family: var(--font-family);
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+ul, li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    background-color: var(--color-bg);
+    max-width: 400px;
+    width: calc(100dvw - 4rem);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#title:not(.green-title) {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -1px;
+    white-space: nowrap;
+}
+
+#title > span {
+    display: block;
+    white-space: wrap;
+}
+
+.green-title {
+    color: var(--color-text-green);
+}
+
+.subtitle {
+    margin-top: -1rem;
+    color: var(--color-subtitle);
+    font-family: var(--font-family-alt);
+    font-weight: 100;
+    line-height: 1.4;
+    letter-spacing: .1px;
+}
+
+.buttons-wrapper {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.btn {
+    border-radius: 6px;
+    border: none;
+    padding: 10px 16px;
+    background-color: var(--color-bg-btn-green);
+    color: var(--color-text);
+    font-family: var(--font-family-alt);
+    font-size: 14px;
+    letter-spacing: .15px;
+}
+
+.btn:focus, input:focus {
+    outline: 3px solid var(--color-separator);
+    outline-offset: 2px;
+}
+
+.btn-generate, .toggle-btn {
+    margin: 1.7rem .5rem 1rem 0;
+    font-weight: 100;
+}
+
+.toggle-btn {
+    background: var(--color-bg);
+    border: 2px solid var(--color-bg-btn);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.7rem 0 1rem .5rem;
+    position: relative;
+    height: 36px;
+    border-radius: 40%;
+}
+
+.toggle-btn::before {
+    content: "";
+    background-image: url('icons/controls.png');
+    background-size: cover;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+}
+
+.toggle-settings {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background: var(--color-bg-btn);
+    margin: 8px 0 1rem;
+    padding: .3rem 1.5rem 1.3rem;
+    border-radius: 6px;
+}
+
+.checkboxes-wrapper > ul > li {
+    margin-top: .4rem;
+}
+
+#checkboxes-legend {
+    font-weight: 500;
+    margin-bottom: .4rem;
+}
+
+input[type="checkbox"], input[type="checkbox"] + label {
+    cursor: pointer;
+    color: var(--color-subtitle);
+    font-weight: 300;
+}
+
+input[type="checkbox"] {
+    background-color: var(--color-bg);
+    appearance: none;
+    --webkit-appearance: none;
+    -moz-appearance: none;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    margin-right: 5px;
+    border-radius: 35%;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--color-bg);
+    position: relative;
+}
+
+input[type="checkbox"]:checked::before {
+    content: "✔︎";
+    position: absolute;
+    font-size: 14px;
+    color: var(--color-text-green);
+    top: -1px;
+    left: 2px;
+}
+
+.slider-wrapper, .checkboxes-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider-wrapper label {
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="range"] {
+    background: var(--color-separator);
+    --webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 6px;
+    accent-color: var(--color-text-green);
+    margin: 1.2rem 1rem .8rem;
+    /* outline: none; */
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 6px;
+    background: linear-gradient(to right, var(--color-bg-btn-green) 0%, var(--color-bg-btn-green) var(--fill-percent), var(--color-separator) var(--fill-percent), var(--color-separator) 100%);
+    border-radius: 6px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  --webkit-appearance: none;
+  width: 13px;
+  height: 13px;
+  background: var(--color-text-green);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -5px;
+  position: relative;
+  z-index: 1;
+}
+
+#password-length-el {
+    font-size: 1.5rem;
+    color: var(--color-text-green);
+    font-weight: 600;
+}
+
+.separator {
+    color: var(--color-separator);
+    background-color: var(--color-separator);
+    height: 2px;
+    border: none;
+    opacity: 0.5;
+}
+
+.passwords-container {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 2rem;
+}
+
+.password {
+    background-color: var(--color-bg-btn);
+    color: var(--color-text-btn-alt);
+    padding: 9px 19px;
+    width: 190px;
+    min-height: 17px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* --------- UTILITY (visibility) CLASSES ---------- */
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: flex;
+}
+
+/* --------- MEDIA QUERIES ---------- */
+
+@media (max-width: 586px) {
+    .passwords-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .btn-generate {
+        width: 100%;
+    }
+    
+    .container {
+        text-align: center;
+    }
+    
+    .toggle-settings {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .checkboxes-wrapper {
+        margin-top: 1rem;
+    }
+    
+    .checkboxes-wrapper ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 1rem;
+    }
+    
+    .slider-wrapper > label {
+        margin-top: 2rem;
+    }
+}

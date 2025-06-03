@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <section class="section-input">
+                <h1 id="title">Generate a <span class="green-title">random password</span></h1>
+                <p class="subtitle">Never use an insecure password again.</p>
+                <div class="buttons-wrapper">
+                    <button id="generate-el" class="btn btn-generate" onclick="generatePasswords()">Generate passwords</button>
+                    <button class="btn toggle-btn" onclick="openClose()" id="toggle-btn"></button>
+                </div>
+                <div id="generation-params-el" class="toggle-settings hidden">
+                    <div class="checkboxes-wrapper">
+                        <legend id="checkboxes-legend">I want to include:</legend>
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="numbers-checkbox-el" class="checkbox-checked" checked>
+                                <label for="numbers-checkbox-el">Numbers</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="letters-checkbox-el" class="checkbox-checked" checked>
+                                <label for="letters-checkbox-el">Letters</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="symbols-checkbox-el" class="checkbox-checked" checked>
+                                <label for="symbols-checkbox-el">Symbols</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="slider-wrapper">
+                        <label for="length-slider">Length (characters)</label>
+                        <input type="range" id="length-slider" min="10" max="20" value="15" oninput="this.nextElementSibling.textContent = this.value">
+                        <span id="password-length-el">15</span>
+                    </div>
+                </div>
+            </section>
+            <section class="section-output">
+            <hr class="separator">
+                <div class="passwords-container">
+                    <div class="btn password" id="password1-el" onclick="copyTextOne(this)"></div>
+                    <div class="btn password" id="password2-el" onclick="copyTextOne(this)"></div>
+                </div>    
+            </section>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
