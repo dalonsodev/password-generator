@@ -395,7 +395,7 @@ input[type="range"]::-webkit-slider-thumb {
     }
 
     .header-wrapper {
-      margin: -2rem 1.3rem 0rem;
+      margin: -1rem 1.3rem 0rem;
       margin-left: 1.5rem;
       margin-right: 1.5rem;
     }
