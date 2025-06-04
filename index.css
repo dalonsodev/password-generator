@@ -352,7 +352,7 @@ input[type="range"]::-webkit-slider-thumb {
 .visible {
   visibility: visible;
   opacity: 1;
-  height: 282px;
+  height: 125px;
   transform: scaleY(1);
   overflow: visible;
   transition: 
@@ -474,5 +474,9 @@ input[type="range"]::-webkit-slider-thumb {
     .password {
       max-width: 300px;
       width: calc(100% - 2.35rem);
+    }
+
+    .visible {
+      height: 282px;
     }
 }
